@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+# Node-exporter for localhost
+  node-exporter:
+    image: prom/node-exporter:v1.2.2
+    container_name: node-exporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    #user: root
+    ports:
+      - '9100:9100'
+    cap_add:
+      - SYS_TIME
+    restart: always
