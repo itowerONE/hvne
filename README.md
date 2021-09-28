@@ -13,6 +13,6 @@ $ cd hvne
 ```
 
 ```
-docker-compose up -d
+$ docker-compose up -d
 ```
 
