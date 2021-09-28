@@ -1,5 +1,7 @@
 # hvne
 
+![Overall schema](/images/Overall_schema.png)
+
 Docker-compose file with Node exporter for harmony validator nodes.
 Node exporter exposes server metrics for prometheus.
 Should be located on Validator nodes itself.
